@@ -5,6 +5,7 @@ N = 5 -> "5, 4, 3, 2, 1"
 N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
 */
 
+/*
 Console.Write("Введите число N: ");
 int N = Convert.ToInt32(Console.ReadLine());
 
@@ -17,3 +18,32 @@ string GetStringOfNumbers(int start, int end)
 
 }
 Console.WriteLine(GetStringOfNumbers(N, 1));
+*/
+
+/*
+Задача 66: Задайте значения M и N. Напишите программу, которая
+найдёт сумму натуральных элементов в промежутке от M до N.
+M = 1; N = 15 -> 120
+M = 4; N = 8. -> 30
+*/
+
+Console.Write("Введите число N: ");
+int M = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите число M: ");
+int N = Convert.ToInt32(Console.ReadLine());
+SumOfNumbers(M, N);
+void SumOfNumbers(int M, int N)
+{
+    Console.Write(GetSumOfNumbers(M - 1, N));
+}
+int GetSumOfNumbers(int M, int N)
+{
+    int res = M;
+    if(M==N) return 0;
+    else
+    {
+        M++;
+        res = M + GetSumOfNumbers(M, N);
+        return res;
+    }
+}
